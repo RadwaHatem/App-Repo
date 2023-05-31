@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY app.py /app
 
-RUN pip3 install flask
+RUN pip3 install -r requirements.txt
 
 EXPOSE 5000
 
