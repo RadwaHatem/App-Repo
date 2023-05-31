@@ -10,7 +10,7 @@ pipeline {
                     sh """
                         docker build . -t radwahatem/simple-python-app
                         docker login -u ${MYUSER} -p ${MYPASS}
-                        docker push radwahatem/SimplePythonApp
+                        docker push radwahatem/simple-python-app
                 
                         """
                 }
