@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc
+  namespace: default
+  labels:
+    app: python
+spec:
+  ports:
+  - port: 81
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: python
+  type: LoadBalancer     
