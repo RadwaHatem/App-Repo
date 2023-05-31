@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: python
-        image: radwahatem/SimplePythonApp
+        image: radwahatem/simple-python-app
         ports:
         - containerPort: 5000
