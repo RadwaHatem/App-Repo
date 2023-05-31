@@ -5,10 +5,6 @@ app = Flask(__name__)
 def hello():
     return "<div style=\"text-align: center;\"><h1>Hello from Simple Python App!</h1><p>Welcome to My First DevOps Project.</p><p></p></div>"
 
-@app.route("/home")
-def hello():
-    return "<div style=\"text-align: center;\"><h1>Welcome to My Homepage!</h1><p>This is a welcome message from my homepage</p><p></p></div>"
-
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
