@@ -1,25 +1,16 @@
-FROM python:3.7-slim
+FROM python:3.9-slim-buster
 
+# Set the working directory inside the container
 WORKDIR /app
 
-COPY app.py /app
+# Copy the dependencies file to the working directory
+COPY requirements.txt .
 
-COPY requirements.txt /app
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip3 install -r requirements.txt
+# Copy the rest of the app's source code to the working directory
+COPY . .
 
-EXPOSE 5000
-
-CMD ["python3", "app.py"]
-
-#write this code to build and push your image
-
-# # Build the Docker image
-# docker build -t your-dockerhub-username/your-image-name .
-
-# # Log in to Docker Hub
-# docker login
-
-# # Push the image to Docker Hub
-# docker push your-dockerhub-username/your-image-name
-# ```
+# Set the container's entry point
+CMD ["python", "app.py"]
