@@ -9,7 +9,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'MYPASS', usernameVariable: 'MYUSER')]){
                     sh """
                         docker build . -t radwahatem/nodejs:v1.0
-                        docker login -u ${MYUSER} -p ${MYPASS}
+                        docker login -u ${MYUSER} --password-stdin ${MYPASS}
                         docker push radwahatem/SimplePythonApp
                 
                         """
