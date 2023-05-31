@@ -25,9 +25,11 @@ pipeline {
                
 
                   script {
-
+                    
+                    sh "kubectl delete -f deployment.yaml"
                     sh "kubectl apply -f deployment.yaml"
                     sh "kubectl apply -f app-svc.yaml"
+                    
 
                   }
                 
